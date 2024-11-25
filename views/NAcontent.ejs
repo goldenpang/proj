@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        form {
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #4cae4c;
+        }
+        .back-button {
+            background-color: #d9534f; /* Red color for back button */
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .info p {
+            margin: 5px 0;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Space between buttons */
+        }
+        .button {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #0056b3; /* Darker shade for hover effect */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        .back-button {
+            background-color: #d9534f; /* Red color for back button */
+        }
+        canvas {
+            max-width: 600px; /* Set max width for the chart */
+            margin: auto; /* Center the chart */
+        }
+    </style>
+</head>
+    <script>
+        function confirmLogout() {
+            return confirm("Are you sure to Logout?");
+        }
+    </script>
+<body>
+    <h1>Welcome, <%= user.name %>!</h1>
+
+    <div class="info">
+        <h2>Your Information:</h2>
+        <p><strong>ID:</strong> <%= user.id %></p>
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Phone:</strong> <%= user.phoneNo %></p>
+        <p><strong>English Score:</strong> <%= user.englishScore %></p>
+        <p><strong>Chinese Score:</strong> <%= user.chineseScore %></p>
+        <p><strong>Math Score:</strong> <%= user.mathScore %></p>
+    </div>
+
+    <!-- Canvas for the bar chart -->
+    <canvas id="scoreChart" width="400" height="200"></canvas>
+
+    <script>
+        // Prepare data for the bar chart
+        const ctx = document.getElementById('scoreChart').getContext('2d');
+        const scores = {
+          labels: ['English', 'Chinese', 'Math'], // Labels for each subject
+          datasets: [
+              { 
+                  label: 'English Score',
+                  data: [<%= user.englishScore %>, null, null], // Only English score
+                  backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                  borderColor: 'rgba(75, 192, 192, 1)',
+                  borderWidth: 1 
+              },
+              { 
+                  label: 'Chinese Score',
+                  data: [null, <%= user.chineseScore %>, null], // Only Chinese score
+                  backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                  borderColor: 'rgba(153, 102, 255, 1)',
+                  borderWidth: 1 
+              },
+              { 
+                  label: 'Math Score',
+                  data: [null, null, <%= user.mathScore %>], // Only Math score
+                  backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                  borderColor: 'rgba(255, 99, 132, 1)',
+                  borderWidth: 1 
+              },
+          ]
+      };
+
+        const scoreChart = new Chart(ctx, {
+          type: 'bar',
+          data: scores,
+          options: {
+              responsive: true,
+              scales: {
+                  yAxes:[{ stacked:true, ticks:{ beginAtZero:true }}],
+                  xAxes:[{ stacked:true }]
+              },
+              legend:{ position:'top' },
+              title:{ display:true, text:'Student Scores by Subject' }
+          }
+      });
+    </script>
+	<form id="action">
+		<div align="center">
+        <a href="/updateInfo/<%= user._id %>" class="button button:hover">Update Your Information</a>
+        </div>
+    </form>
+    <!-- Logout link -->
+    <form id="logout" action="/logout" method="GET" onsubmit="return confirmLogout()">
+    	<button class="button back-button" type="submit">Logout</button>
+    </form>
+
+</body>
+</html>
+

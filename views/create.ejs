@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .back-button {
+            background-color: #d9534f; /* Red color for back button */
+        }
+    </style>
+    <script>
+        function confirmCreate() {
+            return confirm("Are you sure you want to create this student?");
+        }
+
+        function confirmBack() {
+            return confirm("Your record has not been created. Are you sure you want to leave?");
+        }
+
+        function validateForm() {
+            const phoneInput = document.getElementById('studentPhone').value;
+
+            // Check if the phone number contains only digits
+            if (!/^\d+$/.test(phoneInput)) {
+                alert("Error: Phone number must contain only numbers.");
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h1>Create New Student</h1>
+    <form action="/createStd/<%= user._id %>" id="createStudentForm" method="POST" onsubmit="return confirmCreate() && validateForm()">
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" name="newid" required placeholder="Enter Student ID">
+
+        <label for="studentPwd">Password:</label>
+        <input type="password" id="studentPwd" name="newpwd" required placeholder="Enter Password">
+
+        <label for="studentName">Name:</label>
+        <input type="text" id="studentName" name="newname" required placeholder="Enter Name">
+
+        <label for="studentPhone">Phone Number:</label>
+        <input type="tel" id="studentPhone" name="newphoneNo" required placeholder="Enter Phone Number">
+
+        <label for="englishScore">English Score:</label>
+        <input type="number" id="englishScore" name="neweng" min="0" max="100" required placeholder="Enter English Score">
+
+        <label for="chineseScore">Chinese Score:</label>
+        <input type="number" id="chineseScore" name="newchi" min="0" max="100" required placeholder="Enter Chinese Score">
+
+        <label for="mathScore">Math Score:</label>
+        <input type="number" id="mathScore" name="newmath" min="0" max="100" required placeholder="Enter Math Score">
+
+        <button type="submit">Create Student</button>
+    </form>
+
+    <!-- Back Button -->
+    <form id="backForm" method="POST">
+    	<button class="button back-button" type="button" onclick="if(confirmBack()) { history.back(); }">Back</button>
+    </form>
+</body>
+</html>
+

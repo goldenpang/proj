@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Your Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .back-button {
+            margin-top: 15px; /* Add some spacing */
+            background-color: #d9534f; /* Red color for back button */
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+            const name = document.getElementById('userName').value.trim();
+            const phone = document.getElementById('userPhone').value.trim();
+            
+            let errors = [];
+
+            // Validate Name
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                errors.push("Name should not contain numbers or special characters.");
+            }
+
+            // Validate Phone Number
+            if (!/^\d+$/.test(phone)) {
+                errors.push("Phone Number can only contain digits.");
+            }
+
+            // Show errors if any
+            if (errors.length > 0) {
+                alert(errors.join("\n"));
+                return false; // Do not submit the form
+            }
+
+            // Confirmation before submitting
+            const confirmation = confirm("Are you sure you want to update your information?");
+            if (confirmation) {
+                document.getElementById("updateInfoForm").submit(); // Submit the form
+            }
+        }
+
+        function goBack() {
+            window.location.href = '/aupdateInfo'; // Redirect to the main page (adjust URL as needed)
+        }
+        function confirmBack() {
+            return confirm("Your record has not been created. Are you sure you want to leave?");
+        }
+    </script>
+</head>
+<body>
+    <h1>Update Your Information</h1>
+    <form id="updateInfoForm" action="/aupdateInfo/<%= user._id %>" method="POST" onsubmit="validateForm(event)">
+    	<input type="hidden" name="_id" value="<%= user._id %>" readonly>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="id" value="<%= user.id %>" readonly>
+
+        <label for="userPwd">Password:</label>
+        <input type="password" id="userPwd" name="pwd" value="<%= user.pwd %>" required>
+
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="aname" value="<%= user.name %>" required>
+
+        <label for="userPhone">Phone Number:</label>
+        <input type="tel" id="userPhone" name="phone" value="<%= user.phoneNo %>" required>
+
+        <button type="submit">Update Information</button>
+    </form>
+
+    <!-- Back Button -->
+    <form id="backForm" method="POST">
+    	<button class="button back-button" type="button" onclick="if(confirmBack()) { history.back(); }">Back</button>
+    </form>
+</body>
+</html>
+

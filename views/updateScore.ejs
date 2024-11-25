@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User Scores</title>
+    <style>
+        /* Basic styles for the form */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .alert {
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda; /* Light green */
+            color: #155724; /* Dark green */
+        }
+        .error {
+            background-color: #f8d7da; /* Light red */
+            color: #721c24; /* Dark red */
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Scores for <%= user.name %></h1>
+
+    <div id="notification" class="alert" style="display:none;"></div> <!-- Notification area -->
+
+    <form action="/aupdate/?id=<%= user._id %>&uid=<%= target._id %>" method="POST" id="updateScoreForm">
+    	<!-- Hidden input field for user ID -->
+    	<input type="hidden" name="_id" value="<%= target._id %>" readonly>
+    	
+    	<label for="ID">ID:</label>
+        <input type="text" id="adminId" name="id" value="<%= target.id %>" readonly>
+
+        <label for="engScore">English Score:</label>
+        <input type="number" id="engScore" name="eng" value="<%= target.englishScore %>" required>
+
+        <label for="chiScore">Chinese Score:</label>
+        <input type="number" id="chiScore" name="chi" value="<%= target.chineseScore %>" required>
+
+        <label for="mathScore">Math Score:</label>
+        <input type="number" id="mathScore" name="math" value="<%= target.mathScore %>" required>
+
+        <button type="submit">Update Scores</button>
+    </form>
+    <!-- Back Button -->
+    <form id="back" method="POST">
+    	<button class="button back-button" onClick="history.back()">Back</button>
+    </form>
+</body>
+</html>
+
