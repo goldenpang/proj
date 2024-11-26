@@ -59,11 +59,23 @@
 ### 4.2.1 Read - read student information
 ![{05855DB4-AF66-4A90-B561-4040168BB75F}](https://github.com/user-attachments/assets/3498989a-da8f-44b7-a45c-feed19335512)
 ![{A3ED847A-1713-4EB5-85D6-B96F6BBE3241}](https://github.com/user-attachments/assets/7cbf38eb-1cb5-4012-b9bf-963b52da9e02)
+
 ### 4.2.2 Update - edit student record
 ![{AA4C8BBE-B7BC-4398-A35A-AC542697FC12}](https://github.com/user-attachments/assets/d4b665df-696b-44c0-9295-bbd75087d615)
+![image](https://github.com/user-attachments/assets/b39df545-c301-474a-bded-5aca3293e8e3)
+
+### 4.2.2 Update - edit its own information
+![{FF70CFE7-4065-42E1-A9DE-E7B1E5634004}](https://github.com/user-attachments/assets/e40653ef-71a3-47bb-8ca6-5aba07804436)
+![{DE77CB7D-9827-4DDF-8832-926A65829D79}](https://github.com/user-attachments/assets/5522e7da-03be-4945-9675-75d98fcbf838)
 
 ### 4.2.3 Create - create a new student record
+![{0745B10C-257D-4B0F-91D7-71F1037565D9}](https://github.com/user-attachments/assets/09bda7fd-95a1-4d80-ae29-2be0782e5b28)
+![{0C21AE72-8865-4852-8E5C-FE0144030B69}](https://github.com/user-attachments/assets/552754e3-b8a6-45db-8cb0-8475d670aff0)
+
 ### 4.2.4 Delete - remove the student record
+![{1CA97492-BF0F-43E7-A057-23BA4BA59686}](https://github.com/user-attachments/assets/8324ebe3-2396-4a3a-aa4f-a855cf7b3b15)
+![{B87F6863-27E3-419C-BA16-7671E3D4CE86}](https://github.com/user-attachments/assets/1887255b-27b0-4fcc-a91e-0bed0d556024)
+
 ## 4.3 Non-admin Login
 ### 4.3.1 Read - read its own information
 ### 4.3.2 Update - edit its ID, Name or Phone No.
