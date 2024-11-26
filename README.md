@@ -57,9 +57,11 @@
 - (Non-admin account) id: test, pwd: test
 ## 4.2 Admin Login
 ### 4.2.1 Read - read student information
-![{C901E7E3-86D9-4845-A8E6-862647643E1F}](https://github.com/user-attachments/assets/6fa4af3e-e038-48b2-ad76-91bf5498ee79)
-
+![{05855DB4-AF66-4A90-B561-4040168BB75F}](https://github.com/user-attachments/assets/3498989a-da8f-44b7-a45c-feed19335512)
+![{A3ED847A-1713-4EB5-85D6-B96F6BBE3241}](https://github.com/user-attachments/assets/7cbf38eb-1cb5-4012-b9bf-963b52da9e02)
 ### 4.2.2 Update - edit student record
+![{AA4C8BBE-B7BC-4398-A35A-AC542697FC12}](https://github.com/user-attachments/assets/d4b665df-696b-44c0-9295-bbd75087d615)
+
 ### 4.2.3 Create - create a new student record
 ### 4.2.4 Delete - remove the student record
 ## 4.3 Non-admin Login
