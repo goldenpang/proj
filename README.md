@@ -81,27 +81,27 @@
 ### 4.3.2 Update - edit its ID, Name or Phone No.
 ## 4.4 RESTful CRUD Services
 ### 4.4.1 Create [Need Admin, create student record]
-- curl -X POST http://localhost:8099/api/create -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","newid":"bob","newpwd":"bob123", "name":"Bob Leung","phone":"1234567890","eng":4,"chi":4,"math":4}'
+- curl -X POST https://s381f-project-vye1.onrender.com/api/create -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","newid":"bob","newpwd":"bob123", "name":"Bob Leung","phone":"1234567890","eng":4,"chi":4,"math":4}'
   - Result: Admin "tony" create a new Student File id called "bob", named "Bob Leung", which login password is "bob123", 
 its phone number is "1234567890", English score is "4", Chinese Score is "4", Math score is "4"
 ### 4.4.2 Read [Need Admin, Check all student record, sort(0: ascend, 1: descend), default is sort=0]
-- curl -G "http://localhost:8099/api/read/all" --data-urlencode "id=tony" --data-urlencode "pwd=123" --data-urlencode "sort=1"
+- curl -G "https://s381f-project-vye1.onrender.com/api/read/all" --data-urlencode "id=tony" --data-urlencode "pwd=123" --data-urlencode "sort=1"
   - Result: Show all non-admin account information, sort descending
 ### 4.4.3 Read [Need Admin, Check specfic student record]
-- curl -G "http://localhost:8099/api/read/one" --data-urlencode "id=tony" --data-urlencode "pwd=123" --data-urlencode "targetid=test"
+- curl -G "https://s381f-project-vye1.onrender.com/api/read/one" --data-urlencode "id=tony" --data-urlencode "pwd=123" --data-urlencode "targetid=test"
   - Result: show the specfic account "test"'s information
 ### 4.4.4 Read [Any User, Check his own information]
-- curl -G "http://localhost:8099/api/read" --data-urlencode "id=tom" --data-urlencode "pwd=tom123"
+- curl -G "https://s381f-project-vye1.onrender.com/api/read" --data-urlencode "id=tom" --data-urlencode "pwd=tom123"
   - Result: show the account "tom"'s information
 ### 4.4.5 Update [Need Admin, Edit specfic account information (eng, chi, math)]
-- curl -X PUT http://localhost:8099/api/updateScore -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","targetid":"test","math":"4"}'
+- curl -X PUT https://s381f-project-vye1.onrender.com/api/updateScore -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","targetid":"test","math":"4"}'
   - Result: Account "test"'s math score is update to "4"
 ### 4.4.6 Update [Need Admin, Edit specfic account information (eng, chi, math)]
-- curl -X PUT http://localhost:8099/api/updateScore -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","targetid":"test","eng":"5","chi":"4"}'
+- curl -X PUT https://s381f-project-vye1.onrender.com/api/updateScore -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","targetid":"test","eng":"5","chi":"4"}'
   - Result: Account "test"'s english score and math score are update to "5" and "4"
 ### 4.4.7 Update [Any User, Edit hos own account information (name, pno)]
-- curl -X PUT http://localhost:8099/api/updateInfo -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","pno":"99999999", "name":"tonyy"}'
+- curl -X PUT https://s381f-project-vye1.onrender.com/api/updateInfo -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","pno":"99999999", "name":"tonyy"}'
   - Result: Account "tony" phone number is update to "99999999" and name update to "tonyy"
 ### 4.4.8 Delete [Need Admin, Delete specfic user]
-- curl -X DELETE http://localhost:8099/api/delete -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","targetid":"bob"}'
+- curl -X DELETE https://s381f-project-vye1.onrender.com/api/delete -H "Content-Type: application/json" -d '{"id":"tony","pwd":"123","targetid":"bob"}'
   - Result: Account "bob" got deleted
