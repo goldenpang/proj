@@ -3,7 +3,7 @@
 # 1. Project Info
 ### Group 47
 - Lu Yuk Tong (13439007)
-- (13458384)
+- Ng Chiu Cheuk (13458384)
 - (13448631)
 - Yu Yiu Pang (13427531)
 
