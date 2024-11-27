@@ -88,8 +88,8 @@
         <button type="submit">Update Scores</button>
     </form>
     <!-- Back Button -->
-    <form id="back" method="POST">
-    	<button class="button back-button" onClick="history.back()">Back</button>
+    <form id="back" action="/sinfo/<%= user._id %>" method="POST">
+    	<button class="button back-button" type="submit">Back</button>
     </form>
 </body>
 </html>
