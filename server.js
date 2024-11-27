@@ -127,7 +127,8 @@ app.post('/aupdate', async (req, res) => {
 	const { uid, id } = req.query;
     try {
     	const user = await Account.findById(id);
-    	const targetId = req.params.uid; 
+    	//const targetId = req.params.uid; 
+	const targetId = uid;
         const targetUser = await Account.findById(uid);
         if (!targetUser) {
             return res.status(404).json({ message: 'Target user not found', targetUser });
