@@ -69,7 +69,7 @@
 
     <div id="notification" class="alert" style="display:none;"></div> <!-- Notification area -->
 
-    <form action="/aupdate/?id=<%= user._id %>&uid=<%= target._id %>" method="POST" id="updateScoreForm">
+    <form action="/aupdate?id=<%= user._id %>&uid=<%= target._id %>" method="POST" id="updateScoreForm">
     	<!-- Hidden input field for user ID -->
     	<input type="hidden" name="_id" value="<%= target._id %>" readonly>
     	
