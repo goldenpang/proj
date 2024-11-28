@@ -27,22 +27,22 @@
 - EJS Templating: The application uses EJS as the view engine to render dynamic content based on user interactions.
 ## 2.2 package.json
 ### The dependencies used:
-- csv-parser
-- express-formidable
-- express
-- body-parser
-- mongoose
-- ejs
+| Dependencies | Intro |
+| --- | --- |
+| express-formidable | Handle multipart/form-data |
+| express | Web application framework |
+| body-parser | Parsing incoming request |
+| mongoose | An ODM library for MongoDB and Node.js |
+| ejs | Allows embedding JavaScript into HTML |
 ## 2.3 views folder
-- login.ejs (Login UI)
-- NAcontent.ejs (It show the user's information for non-admin user)
-- Acontent.ejs (If user are admin, they will redirect to this view)
-- index.ejs (It is the view for admin, can see the all students record, have the search bar, and the bar chart to show the students score)
-- sinfo.ejs (Same as index.ejs)
-- update.ejs
-- updateInfo.ejs (Let user update his information, e.g. ID, Password, Name and Phone No.)
-- updateScore.ejs (It is for admin to update students' score)
-- create.ejs (It is for admin to create new student file, include ID and Password)
+| EJS | Intro |
+| --- | --- |
+|login.ejs | Login UI |
+| NAcontent.ejs | It show the user's information for non-admin user |
+| Acontent.ejs | If user are admin, they will redirect to this view |
+| sinfo.ejs | It is the view for admin, can see the all students record, have the search bar, and the bar chart to show the students score |
+| updateInfo.ejs | Let user update his information, e.g. ID, Password, Name and Phone No. || updateScore.ejs (It is for admin to update students' score)
+| create.ejs | It is for admin to create new student file, include ID and Password |
 ## 2.4 models folder
 - account.js (It is for setting the mongoose schema)
 
