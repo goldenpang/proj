@@ -45,6 +45,20 @@
 | create.ejs | It is for admin to create new student file, include ID and Password |
 ## 2.4 models folder
 - account.js (It is for setting the mongoose schema)
+```
+var mongoose = require('mongoose');
+var accountSchema = mongoose.Schema({
+	id: String,
+	pwd: String,
+	name: String,
+	admin: Boolean,
+	phoneNo: String,
+	englishScore: Number,
+	chineseScore: Number,
+	mathScore: Number
+});
+module.exports = accountSchema;
+```
 
 # 3. The cloud-based server URL 
 ## https://s381f-project-vye1.onrender.com/
