@@ -6,7 +6,6 @@
 - Ng Chiu Cheuk (13458384)
 - Kwok Wai Chun (13448631)
 - Yu Yiu Pang (13427531)
-### Cloud-based server URL: https://s381f-project-vye1.onrender.com/
 
 # 2. Project File Infro
 ## 2.1 server.js
@@ -48,7 +47,7 @@
 - account.js (It is for setting the mongoose schema)
 
 # 3. The cloud-based server URL 
-## Still trying
+## https://s381f-project-vye1.onrender.com/
 
 # 4. Operation guides
 ## 4.1 Account
