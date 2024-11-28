@@ -6,6 +6,7 @@
 - Ng Chiu Cheuk (13458384)
 - Kwok Wai Chun (13448631)
 - Yu Yiu Pang (13427531)
+### Cloud-based server URL: ttps://s381f-project-vye1.onrender.com/
 
 # 2. Project File Infro
 ## 2.1 server.js
