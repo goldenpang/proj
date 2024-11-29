@@ -44,7 +44,7 @@
 | updateInfo.ejs | Let user update his information, e.g. ID, Password, Name and Phone No. || updateScore.ejs (It is for admin to update students' score)
 | create.ejs | It is for admin to create new student file, include ID and Password |
 ## 2.4 models folder
-- account.js (It is for setting the mongoose schema)
+- account.js (Specifying fields such as ID, password, name, admin status, phone number, and scores in various subjects for use in a MongoDB database.)
 ```
 var mongoose = require('mongoose');
 var accountSchema = mongoose.Schema({
@@ -94,7 +94,7 @@ module.exports = accountSchema;
 ### 4.3.1 Read - read its own information
 ### 4.3.2 Update - edit its ID, Name or Phone No.
 ## 4.4 RESTful CRUD Services
-## The following RESTful CRUD Services can work on Windows Command Prompt
+* ## The following RESTful CRUD Services can work on Windows Command Prompt
 ### 4.4.1 Create [Need Admin, create student record]
 ```
 curl -X POST https://s381f-project-vye1.onrender.com/api/create -H "Content-Type: application/json" -d "{\"id\":\"tony\",\"pwd\":\"123\",\"newid\":\"bob\",\"newpwd\":\"bob123\", \"name\":\"Bob Leung\",\"phone\":\"1234567890\",\"eng\":\"4\",\"chi\":\"4\",\"math\":\"4\"}"
