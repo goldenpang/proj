@@ -63,12 +63,12 @@ module.exports = accountSchema;
 # 3. The cloud-based server URL 
 ## https://s381f-project-vye1.onrender.com/
 
-# 4. Operation guides
+# 4. Operation guides 
 ## 4.1 Account
 ![{336ACB76-B8F8-45D4-9F01-9CA164ED8973}](https://github.com/user-attachments/assets/06e086f3-7aae-4c0e-b50a-af72802b4cbd)
-- (Admin account) id: tony, password: 123
-- (Non-admin account) id: tom, password: tom123
-- (Non-admin account) id: test, pwd: test
+- ## (Admin account) id: tony, password: 123 
+- ## (Non-admin account) id: tom, password: tom123
+- ## (Non-admin account) id: test, pwd: test
 ## 4.2 Admin Login
 ### 4.2.1 Read - read student information
 ![{05855DB4-AF66-4A90-B561-4040168BB75F}](https://github.com/user-attachments/assets/3498989a-da8f-44b7-a45c-feed19335512)
@@ -94,6 +94,7 @@ module.exports = accountSchema;
 ### 4.3.1 Read - read its own information
 ### 4.3.2 Update - edit its ID, Name or Phone No.
 ## 4.4 RESTful CRUD Services
+## The following RESTful CRUD Services can work on Windows Command Prompt
 ### 4.4.1 Create [Need Admin, create student record]
 ```
 curl -X POST https://s381f-project-vye1.onrender.com/api/create -H "Content-Type: application/json" -d "{\"id\":\"tony\",\"pwd\":\"123\",\"newid\":\"bob\",\"newpwd\":\"bob123\", \"name\":\"Bob Leung\",\"phone\":\"1234567890\",\"eng\":\"4\",\"chi\":\"4\",\"math\":\"4\"}"
